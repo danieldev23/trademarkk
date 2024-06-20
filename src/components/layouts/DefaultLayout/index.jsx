@@ -14,22 +14,22 @@ function Footer() {
 	const links = [
 		{
 			id: 1,
-			text: "Home",
+			text: "Trang chủ",
 			url: "/",
 		},
 		{
 			id: 2,
-			text: "About",
+			text: "Giới thiệu",
 			url: "/about",
 		},
 		{
 			id: 3,
-			text: "Services",
+			text: "Dịch vụ",
 			url: "/services",
 		},
 		{
 			id: 4,
-			text: "Pricing",
+			text: "Chính sách",
 			url: "/pricing",
 		},
 	];
@@ -64,10 +64,6 @@ function Footer() {
 						TradeMark
 					</Link>
 					. All rights reserved. <br />
-					Designed and developed by{" "}
-					<a href="https://trademarkk.com.vn" target="_blank">
-						TradeMarkk
-					</a>
 				</p>
 			</div>
 		</footer>

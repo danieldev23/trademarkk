@@ -25,7 +25,7 @@ function Transactions() {
 			key: "_id",
 		},
 		{
-			title: "Username",
+			title: "Tên người dùng",
 			dataIndex: "transUsername",
 			key: "transUsername",
 			sorter: (a, b) => a.transUsername.localeCompare(b.transUsername),
@@ -40,14 +40,14 @@ function Transactions() {
 			filterMode: "tree",
 		},
 		{
-			title: "Amount",
+			title: "Số lượng",
 			dataIndex: "transAmount",
 			key: "transAmount",
 			sorter: (a, b) => a.transAmount - b.transAmount,
 			sortDirections: ["descend", "ascend"],
 		},
 		{
-			title: "Type",
+			title: "Loại giao dịch",
 			dataIndex: "transType",
 			key: "transType",
 			filters: [
@@ -63,7 +63,7 @@ function Transactions() {
 			width: 70,
 		},
 		{
-			title: "Time of Transaction",
+			title: "Thời gian giao dịch",
 			dataIndex: "transTime",
 			key: "transTime",
 			filterDropdown: ({
@@ -153,9 +153,9 @@ function Transactions() {
 	return (
 		<div>
 			<center className="mb-4">
-				<h1 className="font-bold text-2xl mb-2">Transactions</h1>
+				<h1 className="font-bold text-2xl mb-2">Lịch sử giao dịch</h1>
 				<Search
-					placeholder="Search by username"
+					placeholder="Tìm kiếm người dùng"
 					style={{ width: 200 }}
 					onSearch={(value) => {
 						const d = data.filter((item) =>

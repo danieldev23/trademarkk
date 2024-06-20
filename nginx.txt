@@ -1,0 +1,17 @@
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    root /var/www/trademarkk.com.vn/html;
+
+index index.html index.htm index.nginx-debian.html;
+    server_name trademarkk.com.vn  www.trademarkk.com.vn;
+
+    ssl_certificate /etc/letsencrypt/live/trademarkk.com.vn/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/trademarkk.com.vn/privkey.pem; # managed by Certbot
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+

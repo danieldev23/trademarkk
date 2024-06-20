@@ -111,7 +111,7 @@ const Profile = () => {
 			),
 		},
 		{
-			title: "Balance",
+			title: "Số dư",
 			dataIndex: "balance",
 			key: "balance",
 			render: (text, record) => (
@@ -178,7 +178,7 @@ const Profile = () => {
 			}}
 		>
 			<div className="mt-20 flex items-center justify-center flex-col">
-				<h1 className="font-bold text-2xl text-white mb-4">Wallet</h1>
+				<h1 className="font-bold text-2xl text-white mb-4">Ví</h1>
 				{walletData ? (
 					<Table
 						dataSource={walletData}
@@ -198,7 +198,7 @@ const Profile = () => {
 							return (
 								<Table.Summary.Row>
 									<Table.Summary.Cell>
-										Total (VND)
+										Tổng (VND)
 									</Table.Summary.Cell>
 									<Table.Summary.Cell colSpan={2}>
 										{totalBalance &&
@@ -233,7 +233,7 @@ const Profile = () => {
 						block
 						onClick={handleShowDepositModal}
 					>
-						Deposit
+						Nạp tiền
 					</Button>
 					{walletData && (
 						<Button
@@ -241,7 +241,7 @@ const Profile = () => {
 							block
 							onClick={handleShowWithdrawModal}
 						>
-							Withdraw
+							Rút tiền
 						</Button>
 					)}
 				</div>
@@ -330,10 +330,10 @@ const Profile = () => {
 								onClick={() => setEditMode(false)}
 								className="mr-4"
 							>
-								Cancel
+								Thoát
 							</Button>
 							<Button type="primary" htmlType="submit">
-								Save
+								Lưu
 							</Button>
 						</Form.Item>
 					</Form>
@@ -342,15 +342,15 @@ const Profile = () => {
 						{userInfo && (
 							<>
 								<div className="flex gap-2 justify-between items-center">
-									<p>Full Name:</p>
+									<p>Tên:</p>
 									<b>{userInfo.name}</b>
 								</div>
 								<div className="flex gap-2 justify-between items-center">
-									<p>Bank Name:</p>
+									<p>Ngân hàng:</p>
 									<b>{userInfo.bankName}</b>
 								</div>
 								<div className="flex gap-2 justify-between items-center">
-									<p>Bank Account:</p>
+									<p>Số tài khoản:</p>
 									<b>{userInfo.bankNumber}</b>
 								</div>
 								<div className="flex gap-2 justify-between items-center">
@@ -363,14 +363,14 @@ const Profile = () => {
 									className="mt-4"
 									type="dashed"
 								>
-									Edit
+									Chỉnh sửa
 								</Button>
 							</>
 						)}
 					</div>
 				)}
 				<Button onClick={logout} danger type="text" className="mt-4">
-					Logout
+					Đăng xuất
 				</Button>
 			</div>
 		</ConfigProvider>
@@ -426,7 +426,7 @@ const DepositModal = ({ open, onCancel }) => {
 	return (
 		<Modal
 			open={open}
-			title="Deposit"
+			title="Nạp tiền"
 			footer={null}
 			onCancel={onCancel}
 			onOk={onCancel}
@@ -462,7 +462,7 @@ const DepositModal = ({ open, onCancel }) => {
 						type="primary"
 						htmlType="submit"
 					>
-						Generate QR Code
+						Tạo QR Code
 					</Button>
 				</Form.Item>
 			</Form>

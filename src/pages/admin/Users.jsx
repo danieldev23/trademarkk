@@ -60,25 +60,25 @@ function Users() {
 	const [initialValues, setInitialValues] = useState({});
 	const columns = [
 		{
-			title: "Order",
+			title: "Số thứ tự",
 			dataIndex: "order",
 			key: "order",
 			sorter: (a, b) => a.order - b.order,
 			width: 80,
 		},
 		{
-			title: "Username",
+			title: "Người dùng",
 			dataIndex: "username",
 			key: "username",
 			width: 120,
 		},
 		{
-			title: "Name",
+			title: "Họ tên",
 			dataIndex: "name",
 			key: "name",
 		},
 		{
-			title: "Wallet",
+			title: "Ví",
 			dataIndex: "wallet",
 			key: "wallet",
 			render: (wallet) => (
@@ -92,7 +92,7 @@ function Users() {
 			),
 		},
 		{
-			title: "Balance",
+			title: "Số dư",
 			dataIndex: "wallet",
 			key: "balance",
 			width: 180,
@@ -102,7 +102,7 @@ function Users() {
 			),
 		},
 		{
-			title: "Action",
+			title: "Hành động",
 			key: "action",
 			width: 80,
 			render: (_, record) => (
@@ -188,11 +188,11 @@ function Users() {
 					className="flex items-center justify-start gap-4"
 				>
 					<div>
-						Search by &nbsp;
+						Tìm kiếm với &nbsp;
 						<Select defaultValue="name" onChange={handleSelect}>
-							<Option value="name">Name</Option>
-							<Option value="username">Username</Option>
-							<Option value="bankNumber">Bank Account</Option>
+							<Option value="name">Tên</Option>
+							<Option value="username">Tên người dùng</Option>
+							<Option value="bankNumber">Số tài khoản</Option>
 							<Option value="email">Email</Option>
 						</Select>
 					</div>
@@ -303,12 +303,12 @@ const UserInfoDrawerForm = ({ open, onClose, onSave, user }) => {
 			<Form layout="vertical" form={form} name="user_form">
 				<Row gutter={16}>
 					<Col span={12}>
-						<Form.Item label="Username" name="username">
+						<Form.Item label="Tên người dùng" name="username">
 							<Input disabled />
 						</Form.Item>
 					</Col>
 					<Col span={12}>
-						<Form.Item label="Name" name="name">
+						<Form.Item label="Tên người chơi" name="name">
 							<Input />
 						</Form.Item>
 					</Col>
@@ -322,7 +322,7 @@ const UserInfoDrawerForm = ({ open, onClose, onSave, user }) => {
 				</Row>
 				<Row gutter={16} className="mb-6">
 					<Col lg={8} xs={12}>
-						<Form.Item label="Bank name" name="bankName">
+						<Form.Item label="Tên ngân hàng" name="bankName">
 							<Select>
 								{availableBanks &&
 									availableBanks.map((bank) => (
@@ -337,19 +337,19 @@ const UserInfoDrawerForm = ({ open, onClose, onSave, user }) => {
 						</Form.Item>
 					</Col>
 					<Col lg={16} xs={12}>
-						<Form.Item label="Bank account" name="bankNumber">
+						<Form.Item label="Số tài khoản" name="bankNumber">
 							<Input />
 						</Form.Item>
 					</Col>
 					<Col span={24}>
 						<Button onClick={generateQRCode} block>
-							Generate QR Code
+							Tạo QR Code
 						</Button>
 					</Col>
 				</Row>
 				<Row>
 					<Col span={24}>
-						<h1>Wallet</h1>
+						<h1>Ví</h1>
 					</Col>
 					<Col span={24}>
 						<Form.List name={["wallet", "coins"]}>
@@ -360,7 +360,7 @@ const UserInfoDrawerForm = ({ open, onClose, onSave, user }) => {
 										pagination={false}
 									>
 										<Table.Column
-											title="Coin Code"
+											title="Mã Coin"
 											dataIndex="name"
 											key="name"
 											render={(text, record, index) => (
@@ -377,7 +377,7 @@ const UserInfoDrawerForm = ({ open, onClose, onSave, user }) => {
 													]}
 												>
 													<Select
-														placeholder="Coin code"
+														placeholder="Mã Coin"
 														showSearch
 														optionFilterProp="children"
 														filterOption={(
@@ -408,7 +408,7 @@ const UserInfoDrawerForm = ({ open, onClose, onSave, user }) => {
 											)}
 										/>
 										<Table.Column
-											title="Balance"
+											title="Số dư"
 											dataIndex="balance"
 											key="balance"
 											render={(
@@ -430,12 +430,12 @@ const UserInfoDrawerForm = ({ open, onClose, onSave, user }) => {
 														},
 													]}
 												>
-													<Input placeholder="Balance" />
+													<Input placeholder="Số dư" />
 												</Form.Item>
 											)}
 										/>
 										<Table.Column
-											title="Action"
+											title="Hành động"
 											key="action"
 											render={(text, record, index) => (
 												<MinusCircleOutlined
@@ -453,7 +453,7 @@ const UserInfoDrawerForm = ({ open, onClose, onSave, user }) => {
 											block
 											icon={<PlusOutlined />}
 										>
-											Add coin
+											Thêm Coin
 										</Button>
 									</Form.Item>
 								</>
@@ -463,7 +463,7 @@ const UserInfoDrawerForm = ({ open, onClose, onSave, user }) => {
 				</Row>
 				<Row gutter={16}>
 					<Col span={24}>
-						<Form.Item label="Balance" name={["wallet", "balance"]}>
+						<Form.Item label="Số dư" name={["wallet", "balance"]}>
 							<Input addonAfter="VND" />
 						</Form.Item>
 					</Col>

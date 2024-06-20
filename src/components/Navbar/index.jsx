@@ -43,22 +43,22 @@ function Navbar() {
 	const links = [
 		{
 			id: 1,
-			text: "Home",
+			text: "Trang chủ",
 			url: "/",
 		},
 		{
 			id: 2,
-			text: "About",
+			text: "Về chúng tôi",
 			url: "/about",
 		},
 		{
 			id: 3,
-			text: "Services",
+			text: "Dịch vụ",
 			url: "/services",
 		},
 		{
 			id: 4,
-			text: "Pricing",
+			text: "Chích sách",
 			url: "/pricing",
 		},
 	];
