@@ -31,9 +31,9 @@ const PaymentGateways = () => {
   }, []);
 
   const columns = [
-    { title: "Bank Name", dataIndex: "name", key: "name" },
-    { title: "Bank Account", dataIndex: "account", key: "account" },
-    { title: "User Full Name", dataIndex: "user", key: "user" },
+    { title: "Ngân hàng", dataIndex: "name", key: "name" },
+    { title: "Tài khoản", dataIndex: "account", key: "account" },
+    { title: "Tên tài khoản", dataIndex: "user", key: "user" },
     {
       title: "Active",
       dataIndex: "isActive",
@@ -46,17 +46,17 @@ const PaymentGateways = () => {
       ),
     },
     {
-      title: "Action",
+      title: "Hành động",
       key: "action",
       render: (text, record) => (
         <Popconfirm
-          title="Are you sure to delete this bank account?"
+          title="Bạn chắc chắn muốn xoá?"
           onConfirm={() => removeBank(record.key)}
-          okText="Yes"
-          cancelText="No"
+          okText="Đúng"
+          cancelText="Không"
         >
           <Button danger>
-            Remove
+            Xoá
           </Button>
         </Popconfirm>
       ),
@@ -116,7 +116,7 @@ const PaymentGateways = () => {
 
   return (
     <div className="p-4 lg:p-8 bg-white rounded-lg">
-      <h1 className="font-bold text-2xl mb-6">Payment Gateways</h1>
+      <h1 className="font-bold text-2xl mb-6">Cổng thanh toán</h1>
       <Form onFinish={addBank}>
         <Form.Item
           name="name"
@@ -124,7 +124,7 @@ const PaymentGateways = () => {
             { required: true, message: "Please input bank name!" },
           ]}
         >
-          <Input placeholder="Bank Name" />
+          <Input placeholder="Ngân hàng" />
         </Form.Item>
         <Form.Item
           name="account"
@@ -135,7 +135,7 @@ const PaymentGateways = () => {
             },
           ]}
         >
-          <Input placeholder="Bank Account" />
+          <Input placeholder="Số tài khoản" />
         </Form.Item>
         <Form.Item
           name="user"
@@ -146,7 +146,7 @@ const PaymentGateways = () => {
             },
           ]}
         >
-          <Input placeholder="User Full Name" />
+          <Input placeholder="Tên tài khoản" />
         </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit" loading={formLoading}>
